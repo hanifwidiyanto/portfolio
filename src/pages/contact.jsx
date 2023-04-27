@@ -30,12 +30,12 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="mt-48 mb-24 px-48 h-[420px] items-center flex justify-between"
+      className="mt-48 mb-24 px-48 h-[360px] items-center flex justify-between"
     >
       <div className="flex flex-col justify-between h-full w-5/12 py-8">
         <h1 className="text-4xl text-gelap font-rubik-bold ">Just say hi.</h1>
         <p className="text-gelap text-2xl">
-          I'm always open to discuss your project and talk about new things.
+          I am always open to discuss your project and talk about new things.
         </p>
         <div className="flex w-full justify-between items-end">
           <div className="flex gap-1">
@@ -60,7 +60,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <div className="bg-gelap px-12 py-8 h-full w-6/12 text-terang rounded-md">
+      <div className="bg-gelap p-12 h-full w-6/12 text-terang rounded-md">
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -68,61 +68,65 @@ export default function Contact() {
         >
           {({ errors, touched, getFieldProps }) => (
             <Form>
-              <div className="mb-4 group">
-          
+              <div className="mb-4 relative">
                 <Field
-                  className={`appearance-none border-b-2 border-white w-full py-2 px-2 text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent peer ${
+                  className={`appearance-none border-b-2 border-white w-full py-2 text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent peer ${
                     errors.name && touched.name ? "border-red-500" : ""
                   }`}
                   type="text"
                   name="name"
                   id="name"
-                  placeholder="Your Name"
-                  style={{ position: "relative" }} // tambahkan properti position: relative
                 />
+                <label htmlFor="name" className={`absolute top-2 left-1 peer-focus:-top-4 peer-focus:left-0 font-rubik text-slate-500  peer-focus:text-slate-700 peer-focus:text-sm duration-300 peer-focus ${getFieldProps('name').value ? '-top-4 left-0 text-sm text-slate-700' : ''}`}>
+                  Your Name
+                </label>
                 <ErrorMessage
-                  className="text-red-500"
+                  className="text-red-500 absolute right-0"
                   name="name"
                   component="p"
                 />
               </div>
 
-              <div className="mb-4">
+              <div className="mt-8 mb-4 relative">
                 <Field
-                  className={`appearance-none border-b-2 border-white w-full py-2 px-3 text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent ${
+                  className={`appearance-none border-b-2 border-white w-full py-2 text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent peer ${
                     errors.email && touched.email ? "border-red-500" : ""
                   }`}
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="Your Email"
                 />
+                 <label htmlFor="email" className={`absolute top-2 left-1 peer-focus:-top-4 peer-focus:left-0 font-rubik text-slate-500  peer-focus:text-slate-700 peer-focus:text-sm duration-300 peer-focus ${getFieldProps('email').value ? '-top-4 left-0 text-sm text-slate-700' : ''}`}>
+                  Your Email
+                </label>
                 <ErrorMessage
-                  className="text-red-500"
+                  className="text-red-500 absolute right-0"
                   name="email"
                   component="p"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mt-8 mb-4 relative">
                 <Field
-                  className={`appearance-none border-b-2 border-white w-full py-2 px-3 text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent ${
+                  className={`appearance-none border-b-2 border-white w-full py-2 peer text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent ${
                     errors.budget && touched.budget ? "border-red-500" : ""
                   }`}
                   type="text"
                   name="budget"
                   id="budget"
-                  placeholder="Your Budget (optional)"
                 />
+                 <label htmlFor="budget" className={`absolute top-2 left-1 peer-focus:-top-4 peer-focus:left-0 font-rubik text-slate-500  peer-focus:text-slate-700 peer-focus:text-sm duration-300 peer-focus ${getFieldProps('budget').value ? '-top-4 left-0 text-sm text-slate-700' : ''}`}>
+                  Your Budget (optional)
+                </label>
                 <ErrorMessage
-                  className="text-red-500"
+                  className="text-red-500 absolute right-0"
                   name="budget"
                   component="p"
                 />
               </div>
-              <div className="mb-4">
+              <div className="mt-8 mb-4 relative">
                 <Field
                   as="textarea"
-                  className={`appearance-none border-b-2 border-white w-full py-2 px-3 text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent ${
+                  className={`appearance-none border-b-2 border-white w-full py-2 peer text-slate-50 font-rubik leading-tight focus:outline-none focus:border-gray-500 bg-transparent ${
                     errors.description && touched.description
                       ? "border-red-500"
                       : ""
@@ -130,10 +134,12 @@ export default function Contact() {
                   type="text"
                   name="description"
                   id="description"
-                  placeholder="Your Project Description"
                 />
-                <ErrorMessage
-                  className="text-red-500"
+                 <label htmlFor="description" className={`absolute top-2 left-1 peer-focus:-top-4 peer-focus:left-0 font-rubik text-slate-500  peer-focus:text-slate-700 peer-focus:text-sm duration-300 peer-focus ${getFieldProps('description').value ? '-top-4 left-0 text-sm text-slate-700' : ''}`}>
+                  Your Project Description
+                </label>
+               <ErrorMessage
+                  className="text-red-500 absolute right-0"
                   name="description"
                   component="p"
                 />
