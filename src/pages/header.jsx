@@ -7,6 +7,7 @@ import {
   AiFillGithub,
   AiFillTwitterSquare,
 } from "react-icons/ai";
+import Link from "next/link";
 
 const images = [
   "/assets/images/me.png",
@@ -48,17 +49,16 @@ export default function Header() {
       id: Date.now(),
       image: images[Math.floor(Math.random() * images.length)],
       position: {
-        x: Math.random() * screenWidth,
-        y: Math.random() * screenHeight,
+        x: Math.random() * screenWidth - 100,
+        y: Math.random() * screenHeight - 100,
       },
     };
     setImagesArray([...imagesArray, newImage]);
   };
-  const [wasClick, setWasClick] = useState(false);
 
   return (
     <>
-      <div className="justify-between lg:px-48 md:px-24 px-12 w-full h-screen flex-col md:flex hidden">
+      <section id="top" className="justify-between lg:px-48 md:px-24 sm:px-12 px-6 w-full h-screen flex-col md:flex hidden">
         <div></div>
         <div className="flex w-full justify-between h-full items-center">
           <div className="flex flex-col gap-2 text-gelap">
@@ -104,43 +104,44 @@ export default function Header() {
             <span className="absolute top-[200px] left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2 duration-300 peer-hover:opacity-100 opacity-0 py-2 w-52 text-slate-50 bg-slate-950 rounded-md">
               click to get more of me
             </span>
-            <div class="border-solid absolute top-[180px] peer-hover:opacity-100 opacity-0 duration-300 left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2  border-b-black border-b-8 border-x-transparent border-x-8 border-t-0"></div>
+            <div className="border-solid absolute top-[180px] peer-hover:opacity-100 opacity-0 duration-300 left-1/2 text-center transform -translate-x-1/2 -translate-y-1/2  border-b-black border-b-8 border-x-transparent border-x-8 border-t-0"></div>
           </div>
         </div>
         <div className="flex w-full justify-between mb-12">
-          <ul className="flex gap-4 text-xl">
-            <li className="cursor-pointer">
+          <div className="flex gap-4 text-xl">
+            <Link href="https://www.linkedin.com/in/hanif-t-widiyanto-922085189/" target="_blank" className="cursor-pointer">
               <AiFillLinkedin />
-            </li>
-            <li className="cursor-pointer">
+            </Link>
+            <Link href="https://github.com/hanifwidiyanto" target="_blank" className="cursor-pointer">
               <AiFillGithub />
-            </li>
-            <li className="cursor-pointer">
+            </Link>
+            <Link href="https://instagram.com/hanifwidiyanto" target="_blank" className="cursor-pointer">
               <AiFillInstagram />
-            </li>
-            <li className="cursor-pointer">
+            </Link>
+            <Link href="https://twitter.com/depokjkt" target="_blank" className="cursor-pointer">
               <AiFillTwitterSquare />
-            </li>
-          </ul>
+            </Link>
+          </div>
           <span className="font-rubik text-lg text-gelap">
             halo@hanifwidiyanto.com
           </span>
         </div>
-      </div>
-      <div
-        className={`flex md:hidden lg:px-48 md:px-24 px-12 h-screen w-full flex-col gap-4 ${imagesArray.length > 0 ? 'justify-between' : 'justify-center'}`}
+      </section>
+      <section
+        id="top"
+        className={`flex md:hidden lg:px-48 md:px-24 sm:px-12 px-6 h-screen w-full flex-col gap-4 justify-between`}
         onClick={handleClick}
       >
-        {imagesArray.length > 0 && <div></div> }
+        <div></div>
         <div className="flex flex-col gap-2 text-gelap">
-          <h1 className="font-rubik text-3xl">
+          <h1 className="font-rubik text-2xl">
             {greetings}
             <span className="font-rubik-bold"> Hanif Tri Widiyanto</span>
           </h1>
-          <p className="font-rubik lg:text-2xl text-xl">
+          <p className="font-rubik text-lg">
             Fullstack Developer, UI Designer, and student.
           </p>
-          <span className="text-sm font-rubik-light text-slate-950">
+          <span className="text-xs font-rubik-light text-slate-950">
             (click anywhere to see me)
           </span>
         </div>
@@ -160,8 +161,26 @@ export default function Header() {
             }}
           />
         ))}
-          {imagesArray.length > 0 && <div></div> }
-      </div>
+        <div className="flex w-full flex-col gap-2 justify-between mb-24">
+          <div className="flex gap-2 text-xl">
+            <Link href="https://www.linkedin.com/in/hanif-t-widiyanto-922085189/" target="_blank" className="cursor-pointer">
+              <AiFillLinkedin />
+            </Link>
+            <Link href="https://github.com/hanifwidiyanto" target="_blank" className="cursor-pointer">
+              <AiFillGithub />
+            </Link>
+            <Link href="https://instagram.com/hanifwidiyanto" target="_blank" className="cursor-pointer">
+              <AiFillInstagram />
+            </Link>
+            <Link href="https://twitter.com/depokjkt" target="_blank" className="cursor-pointer">
+              <AiFillTwitterSquare />
+            </Link>
+          </div>
+          <span className="font-rubik text-sm text-gelap">
+            halo@hanifwidiyanto.com
+          </span>
+        </div>
+      </section>
     </>
   );
 }

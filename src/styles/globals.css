@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+html { scroll-behavior: smooth; }
+
+#cursor {
+  background-color: black;
+  border-radius: 25px;
+  
+
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
 
 @font-face {
