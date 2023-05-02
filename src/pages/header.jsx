@@ -10,11 +10,17 @@ import {
 import Link from "next/link";
 
 const images = [
-  "/assets/images/me.png",
-  "/assets/images/me.png",
-  "/assets/images/me.png",
-  "/assets/images/me.png",
-  "/assets/images/me.png",
+  "/assets/images/me/me.png",
+  "/assets/images/me/1.jpg",
+  "/assets/images/me/2.jpg",
+  "/assets/images/me/3.jpg",
+  "/assets/images/me/4.jpg",
+  "/assets/images/me/5.jpg",
+  "/assets/images/me/6.jpg",
+  "/assets/images/me/7.jpg",
+  "/assets/images/me/8.jpg",
+  "/assets/images/me/9.jpg",
+  "/assets/images/me/10.jpg",
 ];
 
 export default function Header() {
@@ -77,7 +83,7 @@ export default function Header() {
               src={img.image}
               width={200}
               height={240}
-              className="pt-12 saturate-[30%] cursor-pointer hover:saturate-100 rounded-md  duration-300 text-black"
+              className="pt-12 saturate-[80%] cursor-pointer hover:saturate-100 rounded-md  duration-300 text-black"
               priority
               alt="profile"
               draggable="true"
@@ -151,7 +157,7 @@ export default function Header() {
             src={img.image}
             width={100}
             height={120}
-            className="pt-12 saturate-[30%] cursor-pointer hover:saturate-100 rounded-md  duration-300 text-black"
+            className="pt-12 saturate-[80%] cursor-pointer hover:saturate-100 rounded-md  duration-300 text-black"
             priority
             alt="profile"
             style={{

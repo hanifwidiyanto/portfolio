@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaHome, FaTools, FaBriefcase, FaEnvelope } from "react-icons/fa";
-
+import { BsJournalText } from "react-icons/bs";
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -70,31 +70,41 @@ export default function Navbar() {
           <span className={`h-[2px] w-5 bg-terang ${navbarOpen ? '-top-2' : 'top-0'} relative duration-300`}></span>
         </motion.div>
       }
-      <div className={`fixed grid place-content-center duration-300 w-screen h-screen ${navbarOpen ? ' visible bg-gelap opacity-25' : 'bg-terang opacity-0 invisible'}`} onClick={() => setNavbarOpen(!navbarOpen)}>
+      <div className={`fixed grid z-30 place-content-center duration-300 w-screen h-screen ${navbarOpen ? ' visible bg-gelap opacity-25' : 'bg-terang opacity-0 invisible'}`} onClick={() => setNavbarOpen(!navbarOpen)}>
       </div>
       {navbarOpen &&
-        <motion.div initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.1 }} className={`fixed duration-50000 w-48 h-48  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2   flex justify-center items-center  z-50 flex-wrap`} onClick={() => setNavbarOpen(!navbarOpen)}>
-          <Link href="#top" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-tl-md border-r border-b border-gray-300 flex justify-center items-center">
-            <FaHome size={24} />
-            <span className="text-xs">home</span>
-          </Link>
-          <Link href="#skills" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-tr-md border-b border-gray-300 flex justify-center items-center">
-            <FaTools size={24} />
-            <span className="text-xs">skill</span>
+        <>
+          <motion.div initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.1 }} className={` fixed  w-48 h-48  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2   flex justify-center items-center  z-40 flex-wrap`} onClick={() => setNavbarOpen(!navbarOpen)}>
+            <Link href="#top" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-tl-md border-r border-b border-gray-300 flex justify-center items-center">
+              <FaHome size={24} />
+              <span className="text-xs">home</span>
+            </Link>
+            <Link href="#skills" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-tr-md border-b border-gray-300 flex justify-center items-center">
+              <FaTools size={24} />
+              <span className="text-xs">skill</span>
 
-          </Link>
-          <Link href="#experience" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-bl-md border-r border-gray-300 flex justify-center items-center">
-            <FaBriefcase size={24} />
-            <span className="text-xs">experience</span>
+            </Link>
+            <Link href="#experience" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-bl-md border-r border-gray-300 flex justify-center items-center">
+              <FaBriefcase size={24} />
+              <span className="text-xs">experience</span>
 
+            </Link>
+            <Link href="#contact" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-br-md flex justify-center items-center">
+              <FaEnvelope size={24} />
+              <span className="text-xs">contact</span>
+            </Link>
+          </motion.div>
+          <Link href="https://blog.hanifwidiyanto.com" target="_blank">
+            <motion.div z-50 initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.1 }}
+              className="fixed bottom-12 cursor-pointer right-12 z-50 bg-terang rounded-lg text-gelap hover:text-terang hover:bg-gelap p-3 text-4xl ">
+              <BsJournalText />
+            </motion.div>
           </Link>
-          <Link href="#contact" className="w-24 bg-gelap flex-col gap-1 hover:bg-terang hover:text-gelap text-terang h-24 rounded-br-md flex justify-center items-center">
-            <FaEnvelope size={24} />
-            <span className="text-xs">contact</span>
-          </Link>
-        </motion.div>
+        </>
       }
 
 
