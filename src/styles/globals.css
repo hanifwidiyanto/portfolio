@@ -4,7 +4,7 @@
 
 html { scroll-behavior: smooth; }
 
-#cursor {
+/* #cursor {
   background-color: black;
   border-radius: 25px;
   
@@ -16,7 +16,7 @@ html { scroll-behavior: smooth; }
   z-index: 9999;
   filter: invert(1);
   mix-blend-mode: difference;
-}
+} */
 
 @font-face {
   font-family: 'rubik';

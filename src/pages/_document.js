@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="bg-gelap dark:bg-terang font-rubik overflow-x-hidden  selection:bg-slate-500" style={{scrollBehavior: "smooth"}}>  
+      <body className="bg-terang font-rubik overflow-x-hidden  selection:bg-slate-500" style={{scrollBehavior: "smooth"}}>  
         <Main />
         <NextScript />
       </body>
