@@ -40,7 +40,7 @@ export default function Contact() {
     }
     axios.defaults.headers.post["Content-Type"] = "text/plain";
     try {
-      const response = await axios.post("https://script.google.com/macros/s/AKfycby8SP5FefxkIE59YNrJiSfx7gEx1iSzmGfI_pmGmrWqWaagQH6fx0QYnrSXb51d3jpSdg/exec", data);
+      const response = await axios.post("https://script.google.com/macros/s/AKfycbz1kpe4N0wlIrtiyEhQznd-E82UqaSR4sGFYp9Am59q6JZyJMjMDBVmwtZJqDVyWz3uYg/exec", data);
       console.log(response);
       setTimeout(() => {
         setIsLoading(false)
