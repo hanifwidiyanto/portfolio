@@ -35,7 +35,7 @@ export default function Contact() {
       Nama: name,
       Email: email,
       Budget: budget,
-      ProjectDesription: description,
+      ProjectDescription: description,
       TanggalSubmit: Date.now()
     }
     axios.defaults.headers.post["Content-Type"] = "text/plain";
