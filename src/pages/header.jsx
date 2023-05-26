@@ -128,9 +128,9 @@ export default function Header() {
               <AiFillTwitterSquare />
             </Link>
           </div>
-          <span className="font-rubik text-lg text-gelap">
+          <Link href="mailto:halo@hanif.email" className="font-rubik text-lg text-gelap">
             halo@hanif.email 
-          </span>
+          </Link>
         </div>
       </section>
       <section
@@ -182,9 +182,9 @@ export default function Header() {
               <AiFillTwitterSquare />
             </Link>
           </div>
-          <span className="font-rubik text-sm text-gelap">
-            halo@hanifwidiyanto.com
-          </span>
+          <Link href="mailto:halo@hanif.email" className="font-rubik text-sm text-gelap">
+            halo@hanif.email 
+          </Link>
         </div>
       </section>
     </>
