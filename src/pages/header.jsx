@@ -129,7 +129,7 @@ export default function Header() {
             </Link>
           </div>
           <span className="font-rubik text-lg text-gelap">
-            halo@hanif.email
+            halo@hanif.email 
           </span>
         </div>
       </section>
