@@ -91,7 +91,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-col md:gap-1 gap-[1px]">
             <h6 className="text-gelap text-sm">Mail me at</h6>
-            <h4 className="text-md">halo@hanifwidiyanto.com</h4>
+            <h4 className="text-md">halo@hanif.email</h4>
           </div>
         </div>
       </div>
